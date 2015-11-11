@@ -1,0 +1,3 @@
+How to integrate ActionLib to qubo
+1.Create a CMakelists.txt and package.xml file for the actionlib package if needed
+2.Include a .action file/directory
