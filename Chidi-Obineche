@@ -1,3 +1,8 @@
 How to integrate ActionLib to qubo
-1.Create a CMakelists.txt and package.xml file for the actionlib package if needed
+1.Create a CMakelists.txt and package.xml file for the actionlib package if needed using either catkin or rosbuild
 2.Include a .action file/directory
+3. Create a Simple Action Server using the Executive Callback method (This creates the action messages)
+ a) You can automatically generate the message files during the make process by inserting the code: rosbuild_find_ros_package(actionlib_msgs)
+include(${actionlib_msgs_PACKAGE_PATH}/cmake/actionbuild.cmake)
+genaction() in CMakeLists.txt if you used rosbuild or the code: find_package(catkin REQUIRED COMPONENTS actionlib_msgs) if Catkin was used.
+Visit <http://wiki.ros.org/actionlib_tutorials/Tutorials/SimpleActionServer%28ExecuteCallbackMethod%29> for a more detailed description, or if you do not understand this summary
